@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>North Town Style</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #1a1a1a;
+            color: white;
+            display: flex;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            width: 220px;
+            background: #111;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            border-left: 3px solid #c46a32;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #c46a32;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background: #c46a32;
+            color: #111;
+        }
+
+        /* المحتوى */
+        .content {
+            margin-right: 240px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* الصورة المثبتة */
+        .header-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid #c46a32;
+        }
+
+        h1 {
+            color: #c46a32;
+            text-align: center;
+        }
+
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #2a2a2a;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            document.getElementById("programmer").style.display = "none";
+            document.getElementById("server").style.display = "none";
+
+            document.getElementById(id).style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- القائمة -->
+    <div class="sidebar">
+        <a href="#" onclick="showSection('programmer')">مبرمج الموقع</a>
+        <a href="#" onclick="showSection('server')">رئاسة السيرفر</a>
+    </div>
+
+    <!-- المحتوى -->
+    <div class="content">
+
+        <img src="header.jpg" class="header-img">
+
+        <!-- قسم مبرمج الموقع -->
+        <div id="programmer">
+            <h1>مبرمج الموقع</h1>
+
+            <table>
+                <tr>
+                    <th>Discord User</th>
+                    <th>Nickname</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td>fromirq</td>
+                    <td>Tabot</td>
+                    <td>Ali</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- قسم رئاسة السيرفر -->
+        <div id="server" style="display:none;">
+            <h1>رئاسة السيرفر</h1>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Discord User</th>
+                    <th>Rank</th>
+                </tr>
+                <tr>
+                    <td>Loka</td>
+                    <td>7.yv</td>
+                    <td>Owner</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
