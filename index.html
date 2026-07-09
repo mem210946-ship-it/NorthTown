@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>North Town Style</title>
+    <title>North Town Panel</title>
 
     <style>
         body {
@@ -98,7 +98,7 @@
 
     <script>
         function showSection(id) {
-            document.getElementById("programmer").style.display = "none";
+            document.getElementById("developer").style.display = "none";
             document.getElementById("server").style.display = "none";
 
             const section = document.getElementById(id);
@@ -111,7 +111,7 @@
 <body>
 
     <div class="sidebar">
-        <a href="#" onclick="showSection('programmer')">Website Developer</a>
+        <a href="#" onclick="showSection('developer')">Website Developer</a>
         <a href="#" onclick="showSection('server')">Server Management</a>
     </div>
 
@@ -119,7 +119,7 @@
 
         <img src="header.jpg" class="header-img">
 
-        <div id="programmer">
+        <div id="developer">
             <h1>Website Developer</h1>
 
             <table>
