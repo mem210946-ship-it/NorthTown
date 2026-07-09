@@ -74,23 +74,40 @@
             animation: fadeIn 1.2s ease;
         }
 
-        table {
-            width: 60%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background: rgba(0,0,0,0.30);
-            backdrop-filter: blur(3px);
-            animation: fadeIn 1.4s ease;
+        .section {
+            display: none;
         }
 
-        th, td {
-            padding: 12px;
-            border: 1px solid #444;
+        .section.active {
+            display: block;
+        }
+
+        .info-box {
+            background: rgba(0,0,0,0.40);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .link-box {
             text-align: center;
-            transition: 0.25s;
+            margin-top: 40px;
         }
 
-        tr:hover td {
+        .link-box a {
+            font-size: 22px;
+            color: #f3c7a3;
+            background: rgba(0,0,0,0.40);
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .link-box a:hover {
             background: #c46a32;
             color: #111;
         }
@@ -98,12 +115,8 @@
 
     <script>
         function showSection(id) {
-            document.getElementById("developer").style.display = "none";
-            document.getElementById("server").style.display = "none";
-
-            const section = document.getElementById(id);
-            section.style.display = "block";
-            section.style.animation = "fadeIn 0.6s ease";
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
         }
     </script>
 </head>
@@ -112,17 +125,18 @@
 
     <div class="sidebar">
         <a href="#" onclick="showSection('developer')">Website Developer</a>
-        <a href="#" onclick="showSection('server')">Server Owners</a>
+        <a href="#" onclick="showSection('owners')">Server Owners</a>
+        <a href="#" onclick="showSection('info')">Server Info</a>
+        <a href="#" onclick="showSection('accounts')">Server Accounts</a>
     </div>
 
     <div class="content">
 
-        <!-- الصورة الجديدة بدل القديمة -->
         <img src="https://cdn.discordapp.com/attachments/1382000414232285214/1524714546126651554/info.png?ex=6a50c093&is=6a4f6f13&hm=4f9ef9e6d77a350c5b0373d63bef8fd20ddeb631d5efcc745af927bda52dc9bd" class="header-img">
 
-        <div id="developer">
+        <!-- Website Developer -->
+        <div id="developer" class="section active">
             <h1>Website Developer</h1>
-
             <table>
                 <tr>
                     <th>Discord User</th>
@@ -137,9 +151,9 @@
             </table>
         </div>
 
-        <div id="server" style="display:none;">
+        <!-- Server Owners -->
+        <div id="owners" class="section">
             <h1>Server Owners</h1>
-
             <table>
                 <tr>
                     <th>Name</th>
@@ -152,6 +166,43 @@
                     <td>Owner</td>
                 </tr>
             </table>
+        </div>
+
+        <!-- Server Info -->
+        <div id="info" class="section">
+            <h1>Server Info</h1>
+
+            <div class="info-box">
+𝗡𝗼𝗿𝘁𝗵 𝗧𝗼𝘄𝗻 𝗥𝗣
+
+مرحباً بكم في نورث تاون RP حيث تبدأ الحياة الواقعية بمعايير احترافية وتجربة مختلفة صُممت بعناية لتمنح الجميع متعة لعب حقيقية قائمة على الواقعية والعدل والتنظيم
+
+نقدم لكم نظام RP متكامل يعتمد على الجودة والاحتراف مع إدارة نشطة وفريق إشرافي متمرس يعمل على تطوير السيرفر بشكل مستمر لضمان أفضل تجربة لجميع اللاعبين
+
+ما يميزنا
+• نظام حياة واقعية متكامل ومتجدد
+• قوانين واضحة وعدالة في تطبيق الأنظمة
+• إدارة متواجدة ودعم سريع على مدار اليوم
+• فعاليات وتحديثات مستمرة
+• بيئة احترافية تناسب جميع محبي الـ RP
+• طاقم برمجي محترف يعمل على تطوير الأنظمة وإضافة المميزات الحصرية باستمرار
+
+كما يضم مجتمعنا North Shop المتخصص في تقديم الخدمات والمنتجات الرقمية بجودة عالية وموثوقية كاملة ليكون جزءاً من منظومة نورث المتكاملة
+
+إذا كنت تبحث عن مجتمع منظم وإدارة محترفة وتجربة RP حقيقية مليئة بالإبداع والتطوير المستمر فإن North Town RP هو المكان الذي يستحق أن تبدأ فيه رحلتك
+
+North Town RP
+حيث تبدأ القصة ويصنع الإبداع وتعيش تجربة لا تُنسى
+            </div>
+        </div>
+
+        <!-- Server Accounts -->
+        <div id="accounts" class="section">
+            <h1>Server Accounts</h1>
+
+            <div class="link-box">
+                <a href="https://www.tiktok.com/" target="_blank">TikTok Account</a>
+            </div>
         </div>
 
     </div>
